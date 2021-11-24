@@ -27,7 +27,12 @@ const Root: React.FC = () => {
           <button type="submit">search</button>
         </form>
         {results &&
-          results.map((result) => <h1 key={result.id}>{result.title}</h1>)}
+          results.map((result) => (
+            <>
+              <h1 key={result.id}>{result.title}</h1>
+              <img src={result.thumbnail.url} />
+            </>
+          ))}
       </ThemeProvider>
     </>
   );

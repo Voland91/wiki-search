@@ -13,7 +13,7 @@ export const searchFetch = (
   search: string
 ): void => {
   doFetch(
-    `https://en.wikipedia.org/w/rest.php/v1/search/page?q=${search}&limit=2`
+    `https://en.wikipedia.org/w/rest.php/v1/search/page?q=${search}&limit=1`
   ).then((data) => {
     state(data.pages);
   });
