@@ -16,9 +16,10 @@ const doFetch = (customUrl: string) => {
 
 export const searchFetch = (
   state: (value: React.SetStateAction<SearchResult[]>) => void,
-  search: string
+  search: string,
+  searchResultsLength: number
 ): void => {
-  doFetch(`${url + search + limit}`).then((data) => {
+  doFetch(`${url + search}&limit=${searchResultsLength}`).then((data) => {
     state(data.pages);
   });
 };
@@ -26,7 +27,7 @@ export const searchFetch = (
 export const detailsFetch = (
   state: (value: React.SetStateAction<SearchDetails[]>) => void
 ): void => {
-  doFetch(`${detailsUrl}jupiter/with_html`).then((data) => {
-    state(data.html);
+  doFetch(`${detailsUrl}summary/Batman`).then((data) => {
+    state(data.extract);
   });
 };
