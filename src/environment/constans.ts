@@ -1,7 +1,10 @@
-export const API_URL =
-  "https://en.wikipedia.org/w/rest.php/v1/search/page?q=jupiter&limit=2";
+export const API_SEARCH_URL =
+  "https://en.wikipedia.org/w/rest.php/v1/search/page?q=";
+export const LIMIT_SEARCH_URL = "&limit=10";
 
-export interface Result {
+export const API_DETAILS_URL = "https://en.wikipedia.org/w/rest.php/v1/page/";
+
+export interface SearchResult {
   id: number;
   key: string;
   title: string;
@@ -15,4 +18,20 @@ export interface Result {
     duration: null;
     url: string;
   };
+}
+
+export interface SearchDetails {
+  id: number;
+  key: string;
+  title: string;
+  latest: {
+    id: number;
+    timestamp: string;
+  };
+  content_model: string;
+  license: {
+    url: string;
+    title: string;
+  };
+  html: string;
 }

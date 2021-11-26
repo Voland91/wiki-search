@@ -1,4 +1,10 @@
-import { Result } from "../environment/constans";
+import {
+  API_SEARCH_URL as url,
+  LIMIT_SEARCH_URL as limit,
+  API_DETAILS_URL as detailsUrl,
+  SearchResult,
+  SearchDetails,
+} from "../environment/constans";
 
 const doFetch = (customUrl: string) => {
   return fetch(customUrl)
@@ -9,12 +15,18 @@ const doFetch = (customUrl: string) => {
 };
 
 export const searchFetch = (
-  state: (value: React.SetStateAction<Result[]>) => void,
+  state: (value: React.SetStateAction<SearchResult[]>) => void,
   search: string
 ): void => {
-  doFetch(
-    `https://en.wikipedia.org/w/rest.php/v1/search/page?q=${search}&limit=1`
-  ).then((data) => {
+  doFetch(`${url + search + limit}`).then((data) => {
     state(data.pages);
+  });
+};
+
+export const detailsFetch = (
+  state: (value: React.SetStateAction<SearchDetails[]>) => void
+): void => {
+  doFetch(`${detailsUrl}jupiter/with_html`).then((data) => {
+    state(data.html);
   });
 };
