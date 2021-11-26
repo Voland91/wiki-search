@@ -1,6 +1,5 @@
 export const API_SEARCH_URL =
   "https://en.wikipedia.org/w/rest.php/v1/search/page?q=";
-export const LIMIT_SEARCH_URL = "&limit=10";
 
 export const API_DETAILS_URL = "https://en.wikipedia.org/api/rest_v1/page/";
 

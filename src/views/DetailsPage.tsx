@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import { detailsFetch } from "../data/fetching";
 import { SearchDetails } from "../environment/constans";
-import wiki from "wikipedia";
+// import wiki from "wikipedia";
 
-export const DetailsPage: React.FC = () => {
+interface DetailsPageProps {
+  searchName: string;
+}
+
+export const DetailsPage: React.FC<DetailsPageProps> = ({ searchName }) => {
   const [searchSummary, setSearchSummary] = useState<SearchDetails[]>([]);
+  const [search, setSearch] = useState("");
 
   // useEffect(() => {
   //   (async () => {
@@ -22,7 +27,8 @@ export const DetailsPage: React.FC = () => {
   // }, []);
 
   useEffect(() => {
-    detailsFetch(setSearchSummary);
+    setSearch(searchName);
+    detailsFetch(setSearchSummary, search);
   }, []);
 
   return (

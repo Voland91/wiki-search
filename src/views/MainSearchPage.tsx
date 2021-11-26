@@ -3,7 +3,13 @@ import { searchFetch } from "../data/fetching";
 import { SearchResult } from "../environment/constans";
 import { Link } from "react-router-dom";
 
-export const MainSearchPage: React.FC = () => {
+interface MainSearchPageProps {
+  handleForwardSearch: (data: string) => void;
+}
+
+export const MainSearchPage: React.FC<MainSearchPageProps> = ({
+  handleForwardSearch,
+}) => {
   const [results, setResults] = useState<SearchResult[]>([]);
   const [search, setSearch] = useState("");
   const [searchResultsLength, setSearchResultsLength] = useState(5);
@@ -32,7 +38,12 @@ export const MainSearchPage: React.FC = () => {
       {results.length > 0 &&
         results.map((result) => (
           <div key={result.id}>
-            <Link to="/details">{result.title}</Link>
+            <Link
+              to="/details"
+              onClick={() => handleForwardSearch(result.title)}
+            >
+              {result.title}
+            </Link>
           </div>
         ))}
       {results.length > 0 && (

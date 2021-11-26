@@ -1,6 +1,5 @@
 import {
   API_SEARCH_URL as url,
-  LIMIT_SEARCH_URL as limit,
   API_DETAILS_URL as detailsUrl,
   SearchResult,
   SearchDetails,
@@ -25,9 +24,10 @@ export const searchFetch = (
 };
 
 export const detailsFetch = (
-  state: (value: React.SetStateAction<SearchDetails[]>) => void
+  state: (value: React.SetStateAction<SearchDetails[]>) => void,
+  search: string
 ): void => {
-  doFetch(`${detailsUrl}summary/Batman`).then((data) => {
+  doFetch(`${detailsUrl}summary/${search}`).then((data) => {
     state(data.extract);
   });
 };
