@@ -28,8 +28,8 @@ export const DetailsPage: React.FC<DetailsPageProps> = ({ searchName }) => {
 
   useEffect(() => {
     setSearch(searchName);
-    detailsFetch(setSearchSummary, search);
-  }, []);
+    search != "" && detailsFetch(setSearchSummary, search);
+  }, [search]);
 
   return (
     <>

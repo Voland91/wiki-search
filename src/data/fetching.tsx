@@ -15,10 +15,9 @@ const doFetch = (customUrl: string) => {
 
 export const searchFetch = (
   state: (value: React.SetStateAction<SearchResult[]>) => void,
-  search: string,
-  searchResultsLength: number
+  search: string
 ): void => {
-  doFetch(`${url + search}&limit=${searchResultsLength}`).then((data) => {
+  doFetch(`${url + search}&limit=5`).then((data) => {
     state(data.pages);
   });
 };

@@ -7,6 +7,11 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
     }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        overflow-x: hidden;
+    }
     `;
 
 export default GlobalStyle;
