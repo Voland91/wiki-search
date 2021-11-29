@@ -15,9 +15,10 @@ export const MainSearchPage: React.FC<MainSearchPageProps> = ({
 }) => {
   const [results, setResults] = useState<SearchResult[]>([]);
   const [search, setSearch] = useState("");
+  const [searchLanguage, setSearchLanguage] = useState("english");
 
   useEffect(() => {
-    search != "" && searchFetch(setResults, search);
+    search != "" && searchFetch(setResults, search, searchLanguage);
     search === "" && setResults([]);
   }, [search]);
 
@@ -25,11 +26,23 @@ export const MainSearchPage: React.FC<MainSearchPageProps> = ({
     setSearch(e.target.value.toLowerCase());
   };
 
+  const handleChangeSearchLanguage = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setResults([]);
+    setSearch("");
+    setSearchLanguage(e.target.value);
+  };
+
   return (
     <>
       <StyledWrapper>
         <StyledSearchBarWrapper>
-          <SearchBar handleSetSearch={handleSetSearch} search={search} />
+          <SearchBar
+            handleSetSearch={handleSetSearch}
+            search={search}
+            handleChangeSearchLanguage={handleChangeSearchLanguage}
+          />
           {results.length > 0 ? (
             results.map((result) => (
               <div key={result.id}>
