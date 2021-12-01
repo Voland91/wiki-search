@@ -10,8 +10,8 @@ export const StyledInput = styled(DebounceInput)`
   font-size: ${({ theme }) => theme.fontSizes?.L};
   outline: none;
   margin: 20px 0;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.gray};
   caret-color: ${({ theme }) => theme.colors.black};
+  background-color: transparent;
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.gray};

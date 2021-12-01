@@ -11,7 +11,7 @@ export const Input: React.FC<InputProps> = ({ handleSetSearch, search }) => {
       type="text"
       value={search}
       onChange={handleSetSearch}
-      placeholder="Search Wikipedia"
+      placeholder="click to search..."
       debounceTimeout={500}
       minLength={1}
     />

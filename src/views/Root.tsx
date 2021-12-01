@@ -2,7 +2,7 @@ import GlobalStyle from "../theme/GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import theme from "../theme/mainTheme";
 import { Routes, Route } from "react-router-dom";
-import { MainSearchPage } from "./MainSearchPage";
+import { MainSearchPage } from "./MainSearchPage/MainSearchPage";
 import { DetailsPage } from "./DetailsPage";
 import { ErrorPage } from "./ErrorPage";
 import { useState } from "react";

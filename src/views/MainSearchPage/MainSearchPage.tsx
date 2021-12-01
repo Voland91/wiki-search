@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { searchFetch } from "../data/fetching";
-import { SearchResult } from "../environment/constans";
+import { searchFetch } from "../../data/fetching";
+import { SearchResult } from "../../environment/constans";
 import { Link } from "react-router-dom";
 
-import { SearchBar } from "../components/SearchBar/SearchBar";
+import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { StyledWrapper, StyledSearchBarWrapper } from "./MainSearchPage.style";
+import { Logo } from "../../components/atoms/Logo/Logo";
 
 interface MainSearchPageProps {
   handleForwardSearch: (data: string) => void;
@@ -36,6 +37,7 @@ export const MainSearchPage: React.FC<MainSearchPageProps> = ({
 
   return (
     <>
+      <Logo />
       <StyledWrapper>
         <StyledSearchBarWrapper>
           <SearchBar
