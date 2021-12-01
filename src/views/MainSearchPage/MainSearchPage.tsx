@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import { searchFetch } from "../../data/fetching";
-import { SearchResult } from "../../environment/constans";
-import { Link } from "react-router-dom";
+import { SearchingResult } from "../../environment/constans";
 
-import { SearchBar } from "../../components/SearchBar/SearchBar";
-import { StyledWrapper, StyledSearchBarWrapper } from "./MainSearchPage.style";
+import { SearchResult } from "../../components/molecules/SearchResult/SearchResult";
+import { SearchBar } from "../../components/molecules/SearchBar/SearchBar";
+import {
+  StyledWrapper,
+  StyledSearchBarWrapper,
+  StyledSeacrResultWrapper,
+} from "./MainSearchPage.style";
 import { Logo } from "../../components/atoms/Logo/Logo";
+import { Description } from "../../components/atoms/Description/Description";
 
 interface MainSearchPageProps {
   handleForwardSearch: (data: string) => void;
@@ -14,7 +19,7 @@ interface MainSearchPageProps {
 export const MainSearchPage: React.FC<MainSearchPageProps> = ({
   handleForwardSearch,
 }) => {
-  const [results, setResults] = useState<SearchResult[]>([]);
+  const [results, setResults] = useState<SearchingResult[]>([]);
   const [search, setSearch] = useState("");
   const [searchLanguage, setSearchLanguage] = useState("english");
 
@@ -45,22 +50,20 @@ export const MainSearchPage: React.FC<MainSearchPageProps> = ({
             search={search}
             handleChangeSearchLanguage={handleChangeSearchLanguage}
           />
+        </StyledSearchBarWrapper>
+        <StyledSeacrResultWrapper>
           {results.length > 0 ? (
             results.map((result) => (
-              <div key={result.id}>
-                <Link
-                  to="/details"
-                  onClick={() => handleForwardSearch(result.title)}
-                >
-                  {result.title}
-                </Link>
-                <p>{result.description}</p>
-              </div>
+              <SearchResult
+                key={result.id}
+                result={result}
+                handleForwardSearch={handleForwardSearch}
+              />
             ))
           ) : (
-            <p>Type what you are looking for...</p>
+            <Description child="Type what you are looking for..." />
           )}
-        </StyledSearchBarWrapper>
+        </StyledSeacrResultWrapper>
       </StyledWrapper>
     </>
   );

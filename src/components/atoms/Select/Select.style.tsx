@@ -11,6 +11,7 @@ export const StyledSelect = styled.select`
   padding-right: 11px;
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
+  margin-bottom: 20px;
 `;
 
 export const StyledOption = styled.option`

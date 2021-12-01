@@ -11,7 +11,7 @@ export const StyledLogoWrapper = styled.div`
 export const StyledLogoBackground = styled.div`
   position: absolute;
   display: block;
-  left: 35%;
+  left: 40%;
   top: -30%;
   width: calc(100vw / 1.75);
   min-width: 700px;

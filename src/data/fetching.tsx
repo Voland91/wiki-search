@@ -3,8 +3,8 @@ import {
   PL_API_SEARCH_URL as plUrl,
   EN_API_DETAILS_URL as enDetailsUrl,
   PL_API_DETAILS_URL as plDetailsUrl,
-  SearchResult,
-  SearchDetails,
+  SearchingResult,
+  SearchingDetails,
 } from "../environment/constans";
 
 const doFetch = (customUrl: string) => {
@@ -16,7 +16,7 @@ const doFetch = (customUrl: string) => {
 };
 
 export const searchFetch = (
-  state: (value: React.SetStateAction<SearchResult[]>) => void,
+  state: (value: React.SetStateAction<SearchingResult[]>) => void,
   search: string,
   searchLanguage: string
 ): void => {
@@ -35,7 +35,7 @@ export const searchFetch = (
 };
 
 export const detailsFetch = (
-  state: (value: React.SetStateAction<SearchDetails[]>) => void,
+  state: (value: React.SetStateAction<SearchingDetails[]>) => void,
   search: string
 ): void => {
   doFetch(`${enDetailsUrl}summary/${search}`).then((data) => {

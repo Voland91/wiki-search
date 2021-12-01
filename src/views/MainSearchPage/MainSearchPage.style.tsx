@@ -1,21 +1,28 @@
 import styled from "styled-components";
 
+export const StyledWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 999;
+`;
+
 export const StyledSearchBarWrapper = styled.div`
   width: 100%;
   max-width: 800px;
+  min-height: 50vh;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-start;
-  z-index: 999;
-  padding: 20px;
+  padding: 0 20px;
 `;
 
-export const StyledWrapper = styled.div`
-  height: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-content: center;
-  justify-content: center;
+export const StyledSeacrResultWrapper = styled.div`
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 20px 0 20px;
 `;

@@ -1,5 +1,5 @@
-import { Input } from "../atoms/Input/Input";
-import { Select } from "../atoms/Select/Select";
+import { Input } from "../../atoms/Input/Input";
+import { Select } from "../../atoms/Select/Select";
 
 interface SearchBarProps {
   handleChangeSearchLanguage: React.ChangeEventHandler<HTMLSelectElement>;

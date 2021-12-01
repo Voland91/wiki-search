@@ -9,7 +9,6 @@ export const StyledInput = styled(DebounceInput)`
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSizes?.L};
   outline: none;
-  margin: 20px 0;
   caret-color: ${({ theme }) => theme.colors.black};
   background-color: transparent;
 

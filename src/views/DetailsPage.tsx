@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { detailsFetch } from "../data/fetching";
-import { SearchDetails } from "../environment/constans";
+import { SearchingDetails } from "../environment/constans";
 // import wiki from "wikipedia";
 
 interface DetailsPageProps {
@@ -8,7 +8,7 @@ interface DetailsPageProps {
 }
 
 export const DetailsPage: React.FC<DetailsPageProps> = ({ searchName }) => {
-  const [searchSummary, setSearchSummary] = useState<SearchDetails[]>([]);
+  const [searchSummary, setSearchSummary] = useState<SearchingDetails[]>([]);
   const [search, setSearch] = useState("");
 
   // useEffect(() => {
