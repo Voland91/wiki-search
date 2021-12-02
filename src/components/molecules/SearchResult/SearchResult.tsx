@@ -1,10 +1,6 @@
-import { Link } from "react-router-dom";
 import { SearchingResult } from "../../../environment/constans";
 
-import {
-  StyledSearchResult,
-  StyledDescriptionWrapper,
-} from "./SearchResult.style";
+import { StyledSearchResult, StyledLink } from "./SearchResult.style";
 import { Image } from "../../atoms/Image/Image";
 import { Title } from "../../atoms/Title/Title";
 import { Description } from "../../atoms/Description/Description";
@@ -18,13 +14,13 @@ export const SearchResult: React.FC<SearchResultProps> = ({
   result,
   handleForwardSearch,
 }) => (
-  <Link to="/details" onClick={() => handleForwardSearch(result.title)}>
+  <StyledLink to="/details" onClick={() => handleForwardSearch(result.title)}>
     <StyledSearchResult>
       {result.thumbnail != null && <Image src={result.thumbnail.url} />}
-      <StyledDescriptionWrapper>
+      <div>
         <Title child={result.title} />
         <Description child={result.description} result />
-      </StyledDescriptionWrapper>
+      </div>
     </StyledSearchResult>
-  </Link>
+  </StyledLink>
 );

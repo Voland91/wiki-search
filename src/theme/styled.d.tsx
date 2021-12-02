@@ -6,6 +6,7 @@ declare module "styled-components" {
       white: string;
       gray: string;
       black: string;
+      lightGray: string;
     };
 
     fontWeights: {

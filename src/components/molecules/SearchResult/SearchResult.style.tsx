@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const StyledSearchResult = styled.div`
   display: flex;
@@ -8,8 +9,10 @@ export const StyledSearchResult = styled.div`
   padding: 7px;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.gray};
+    background-color: ${({ theme }) => theme.colors.lightGray};
   }
 `;
 
-export const StyledDescriptionWrapper = styled.div``;
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+`;

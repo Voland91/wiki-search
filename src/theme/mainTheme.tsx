@@ -5,6 +5,7 @@ const mainTheme: DefaultTheme = {
     white: "#fff",
     gray: "#dadada",
     black: "#0d0d0d",
+    lightGray: "#f0f0f0",
   },
 
   fontWeights: {
