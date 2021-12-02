@@ -2,16 +2,16 @@ import { StyledDescription } from "./Description.style";
 
 interface DescriptionProps {
   child: string;
-  result?: boolean;
+  dark?: boolean;
   footer?: boolean;
 }
 
 export const Description: React.FC<DescriptionProps> = ({
   child,
-  result,
+  dark,
   footer,
 }) => (
-  <StyledDescription result={result} footer={footer}>
+  <StyledDescription dark={dark} footer={footer}>
     {child}
   </StyledDescription>
 );

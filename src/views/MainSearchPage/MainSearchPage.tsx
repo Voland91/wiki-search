@@ -9,7 +9,6 @@ import {
   StyledSearchBarWrapper,
   StyledSeacrResultWrapper,
 } from "./MainSearchPage.style";
-import { Logo } from "../../components/atoms/Logo/Logo";
 import { Description } from "../../components/atoms/Description/Description";
 
 interface MainSearchPageProps {
@@ -42,7 +41,6 @@ export const MainSearchPage: React.FC<MainSearchPageProps> = ({
 
   return (
     <>
-      <Logo />
       <StyledWrapper>
         <StyledSearchBarWrapper>
           <SearchBar

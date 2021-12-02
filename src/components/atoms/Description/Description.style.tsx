@@ -1,17 +1,17 @@
 import styled, { css } from "styled-components";
 
 interface StyledDescriptionProps {
-  result?: boolean;
+  dark?: boolean;
   footer?: boolean;
 }
 
 export const StyledDescription = styled.p<StyledDescriptionProps>`
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   color: ${({ theme }) => theme.colors.gray};
-  font-size: ${({ theme }) => theme.fontSizes?.m};
+  font-size: ${({ theme }) => theme.fontSizes.m};
 
-  ${({ result }) =>
-    result &&
+  ${({ dark }) =>
+    dark &&
     css`
       color: ${({ theme }) => theme.colors.black};
       margin-top: 7px;

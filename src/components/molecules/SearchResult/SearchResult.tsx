@@ -14,12 +14,15 @@ export const SearchResult: React.FC<SearchResultProps> = ({
   result,
   handleForwardSearch,
 }) => (
-  <StyledLink to="/details" onClick={() => handleForwardSearch(result.title)}>
+  <StyledLink
+    to={`/details/${result.key}`}
+    onClick={() => handleForwardSearch(result.key)}
+  >
     <StyledSearchResult>
       {result.thumbnail != null && <Image src={result.thumbnail.url} />}
       <div>
         <Title child={result.title} />
-        <Description child={result.description} result />
+        <Description child={result.description} dark />
       </div>
     </StyledSearchResult>
   </StyledLink>

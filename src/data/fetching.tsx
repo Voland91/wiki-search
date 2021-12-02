@@ -1,9 +1,7 @@
 import {
-  API_SEARCH_URL as url,
-  EN_API_DETAILS_URL as enDetailsUrl,
-  PL_API_DETAILS_URL as plDetailsUrl,
+  API_SEARCH_URL as searchUrl,
+  API_DETAILS_URL as detailsUrl,
   SearchingResult,
-  SearchingDetails,
 } from "../environment/constans";
 
 const doFetch = (customUrl: string) => {
@@ -19,16 +17,18 @@ export const searchFetch = (
   search: string,
   searchLanguage: string
 ): void => {
-  doFetch(`https://${searchLanguage}.${url + search}&limit=5`).then((data) => {
-    state(data.pages);
-  });
+  doFetch(`https://${searchLanguage}.${searchUrl}?q=${search}&limit=5`).then(
+    (data) => {
+      state(data.pages);
+    }
+  );
 };
 
 export const detailsFetch = (
-  state: (value: React.SetStateAction<SearchingDetails[]>) => void,
+  state: (value: React.SetStateAction<string>) => void,
   search: string
 ): void => {
-  doFetch(`${enDetailsUrl}summary/${search}`).then((data) => {
-    state(data.extract);
+  doFetch(`https://en.${detailsUrl}/${search}/with_html`).then((data) => {
+    state(data.html);
   });
 };
