@@ -9,8 +9,8 @@ export const Select: React.FC<SelectProps> = ({
 }) => {
   return (
     <StyledSelect onChange={handleChangeSearchLanguage}>
-      <StyledOption value="english">english</StyledOption>
-      <StyledOption value="polish">polish</StyledOption>
+      <StyledOption value="en">english</StyledOption>
+      <StyledOption value="pl">polish</StyledOption>
     </StyledSelect>
   );
 };

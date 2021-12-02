@@ -21,7 +21,7 @@ export const MainSearchPage: React.FC<MainSearchPageProps> = ({
 }) => {
   const [results, setResults] = useState<SearchingResult[]>([]);
   const [search, setSearch] = useState("");
-  const [searchLanguage, setSearchLanguage] = useState("english");
+  const [searchLanguage, setSearchLanguage] = useState("en");
 
   useEffect(() => {
     search != "" && searchFetch(setResults, search, searchLanguage);

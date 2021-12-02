@@ -25,4 +25,5 @@ export const StyledSeacrResultWrapper = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 20px 20px 0 20px;
+  margin-bottom: 50px;
 `;

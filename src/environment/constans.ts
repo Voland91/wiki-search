@@ -1,7 +1,4 @@
-export const EN_API_SEARCH_URL =
-  "https://en.wikipedia.org/w/rest.php/v1/search/page?q=";
-export const PL_API_SEARCH_URL =
-  "https://pl.wikipedia.org/w/rest.php/v1/search/page?q=";
+export const API_SEARCH_URL = "wikipedia.org/w/rest.php/v1/search/page?q=";
 
 export const EN_API_DETAILS_URL = "https://en.wikipedia.org/api/rest_v1/page/";
 export const PL_API_DETAILS_URL = "https://pl.wikipedia.org/api/rest_v1/page/";

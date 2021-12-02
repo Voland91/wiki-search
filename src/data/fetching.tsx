@@ -1,6 +1,5 @@
 import {
-  EN_API_SEARCH_URL as enUrl,
-  PL_API_SEARCH_URL as plUrl,
+  API_SEARCH_URL as url,
   EN_API_DETAILS_URL as enDetailsUrl,
   PL_API_DETAILS_URL as plDetailsUrl,
   SearchingResult,
@@ -20,18 +19,9 @@ export const searchFetch = (
   search: string,
   searchLanguage: string
 ): void => {
-  switch (searchLanguage) {
-    case "english":
-      doFetch(`${enUrl + search}&limit=5`).then((data) => {
-        state(data.pages);
-      });
-      break;
-    case "polish":
-      doFetch(`${plUrl + search}&limit=5`).then((data) => {
-        state(data.pages);
-      });
-      break;
-  }
+  doFetch(`https://${searchLanguage}.${url + search}&limit=5`).then((data) => {
+    state(data.pages);
+  });
 };
 
 export const detailsFetch = (
