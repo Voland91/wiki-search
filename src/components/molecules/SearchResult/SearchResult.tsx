@@ -7,17 +7,10 @@ import { Description } from "../../atoms/Description/Description";
 
 interface SearchResultProps {
   result: SearchingResult;
-  handleForwardSearch: (data: string) => void;
 }
 
-export const SearchResult: React.FC<SearchResultProps> = ({
-  result,
-  handleForwardSearch,
-}) => (
-  <StyledLink
-    to={`/details/${result.key}`}
-    onClick={() => handleForwardSearch(result.key)}
-  >
+export const SearchResult: React.FC<SearchResultProps> = ({ result }) => (
+  <StyledLink to={`/details/${result.title}`}>
     <StyledSearchResult>
       {result.thumbnail != null && <Image src={result.thumbnail.url} />}
       <div>

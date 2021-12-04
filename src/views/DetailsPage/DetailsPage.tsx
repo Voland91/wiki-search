@@ -1,19 +1,15 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { detailsFetch } from "../../data/fetching";
 import { StyledDetailsPage } from "./DetailsPage.style";
 
-interface DetailsPageProps {
-  searchName: string;
-}
-
-export const DetailsPage: React.FC<DetailsPageProps> = ({ searchName }) => {
+export const DetailsPage: React.FC = () => {
   const [searchSummary, setSearchSummary] = useState("");
-  const [search, setSearch] = useState("");
+  const { name } = useParams();
 
   useEffect(() => {
-    setSearch(searchName);
-    search != "" && detailsFetch(setSearchSummary, search);
-  }, [search]);
+    name != undefined && detailsFetch(setSearchSummary, name);
+  }, [name]);
 
   return (
     <StyledDetailsPage

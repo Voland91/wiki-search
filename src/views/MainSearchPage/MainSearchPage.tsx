@@ -11,13 +11,7 @@ import {
 } from "./MainSearchPage.style";
 import { Description } from "../../components/atoms/Description/Description";
 
-interface MainSearchPageProps {
-  handleForwardSearch: (data: string) => void;
-}
-
-export const MainSearchPage: React.FC<MainSearchPageProps> = ({
-  handleForwardSearch,
-}) => {
+export const MainSearchPage: React.FC = () => {
   const [results, setResults] = useState<SearchingResult[]>([]);
   const [search, setSearch] = useState("");
   const [searchLanguage, setSearchLanguage] = useState("en");
@@ -28,7 +22,7 @@ export const MainSearchPage: React.FC<MainSearchPageProps> = ({
   }, [search]);
 
   const handleSetSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value.toLowerCase());
+    setSearch(e.target.value);
   };
 
   const handleChangeSearchLanguage = (
@@ -52,11 +46,7 @@ export const MainSearchPage: React.FC<MainSearchPageProps> = ({
         <StyledSeacrResultWrapper>
           {results.length > 0 ? (
             results.map((result) => (
-              <SearchResult
-                key={result.id}
-                result={result}
-                handleForwardSearch={handleForwardSearch}
-              />
+              <SearchResult key={result.id} result={result} />
             ))
           ) : (
             <Description child="Type what you are looking for..." />
