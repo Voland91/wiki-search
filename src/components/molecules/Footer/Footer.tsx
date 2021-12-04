@@ -9,7 +9,7 @@ export const Footer: React.FC = () => (
       rel="nofollow noreferrer"
     >
       <Description
-        child={"Project by Dmitriy Kozhevnikov - Wikipedia Imagination"}
+        child={"Design by Dmitriy Kozhevnikov - Wikipedia Imagination"}
         footer
       />
     </a>

@@ -17,7 +17,7 @@ const Root: React.FC = () => {
         <Logo />
         <Routes>
           <Route index element={<MainSearchPage />} />
-          <Route path="details/:name" element={<DetailsPage />} />
+          <Route path="details/:lang/:name" element={<DetailsPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />

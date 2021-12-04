@@ -1,3 +1,5 @@
+import { DetailsLanguages } from "../../../environment/constans";
+import { searchingLanguages } from "../../../utils/languages";
 import { Input } from "../../atoms/Input/Input";
 import { Select } from "../../atoms/Select/Select";
 
@@ -5,6 +7,7 @@ interface SearchBarProps {
   handleChangeSearchLanguage: React.ChangeEventHandler<HTMLSelectElement>;
   handleSetSearch: React.ChangeEventHandler<HTMLInputElement>;
   search: string;
+  searchingLanguages: DetailsLanguages[];
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({
@@ -14,7 +17,10 @@ export const SearchBar: React.FC<SearchBarProps> = ({
 }) => {
   return (
     <>
-      <Select handleChangeSearchLanguage={handleChangeSearchLanguage} />
+      <Select
+        handleChangeSearchLanguage={handleChangeSearchLanguage}
+        values={searchingLanguages}
+      />
       <Input handleSetSearch={handleSetSearch} search={search} />
     </>
   );

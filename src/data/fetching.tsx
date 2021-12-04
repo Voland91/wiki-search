@@ -2,6 +2,7 @@ import {
   API_SEARCH_URL as searchUrl,
   API_DETAILS_URL as detailsUrl,
   SearchingResult,
+  DetailsLanguages,
 } from "../environment/constans";
 
 const doFetch = (customUrl: string) => {
@@ -26,9 +27,18 @@ export const searchFetch = (
 
 export const detailsFetch = (
   state: (value: React.SetStateAction<string>) => void,
-  search: string
+  languages: (value: React.SetStateAction<DetailsLanguages[]>) => void,
+  detailsName: string,
+  detailsLanguage: string
 ): void => {
-  doFetch(`https://en.${detailsUrl}/${search}/with_html`).then((data) => {
+  doFetch(
+    `https://${detailsLanguage}.${detailsUrl}/${detailsName}/with_html`
+  ).then((data) => {
     state(data.html);
+  });
+  doFetch(
+    `https://${detailsLanguage}.${detailsUrl}/${detailsName}/links/language`
+  ).then((data) => {
+    languages(data);
   });
 };

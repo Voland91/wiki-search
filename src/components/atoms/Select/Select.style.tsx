@@ -7,7 +7,7 @@ export const StyledSelect = styled.select`
   border: none;
   font-family: "Montserrat", sans-serif;
   background: url(${arrow_down}) 100% no-repeat;
-  background-size: 13%;
+  background-size: 12px;
   padding-right: 11px;
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.bold};

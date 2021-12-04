@@ -7,10 +7,14 @@ import { Description } from "../../atoms/Description/Description";
 
 interface SearchResultProps {
   result: SearchingResult;
+  searchLanguage: string;
 }
 
-export const SearchResult: React.FC<SearchResultProps> = ({ result }) => (
-  <StyledLink to={`/details/${result.title}`}>
+export const SearchResult: React.FC<SearchResultProps> = ({
+  result,
+  searchLanguage,
+}) => (
+  <StyledLink to={`/details/${searchLanguage}/${result.key}`}>
     <StyledSearchResult>
       {result.thumbnail != null && <Image src={result.thumbnail.url} />}
       <div>

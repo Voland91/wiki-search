@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { searchFetch } from "../../data/fetching";
 import { SearchingResult } from "../../environment/constans";
+import { searchingLanguages } from "../../utils/languages";
 
 import { SearchResult } from "../../components/molecules/SearchResult/SearchResult";
 import { SearchBar } from "../../components/molecules/SearchBar/SearchBar";
@@ -41,12 +42,17 @@ export const MainSearchPage: React.FC = () => {
             handleSetSearch={handleSetSearch}
             search={search}
             handleChangeSearchLanguage={handleChangeSearchLanguage}
+            searchingLanguages={searchingLanguages}
           />
         </StyledSearchBarWrapper>
         <StyledSeacrResultWrapper>
           {results.length > 0 ? (
             results.map((result) => (
-              <SearchResult key={result.id} result={result} />
+              <SearchResult
+                key={result.id}
+                result={result}
+                searchLanguage={searchLanguage}
+              />
             ))
           ) : (
             <Description child="Type what you are looking for..." />
