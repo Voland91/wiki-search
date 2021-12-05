@@ -9,6 +9,7 @@ import {
   StyledWrapper,
   StyledSearchBarWrapper,
   StyledSeacrResultWrapper,
+  StyledLogoBackground,
 } from "./MainSearchPage.style";
 import { Description } from "../../components/atoms/Description/Description";
 
@@ -36,6 +37,7 @@ export const MainSearchPage: React.FC = () => {
 
   return (
     <>
+      <StyledLogoBackground />
       <StyledWrapper>
         <StyledSearchBarWrapper>
           <SearchBar

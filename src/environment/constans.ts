@@ -23,3 +23,13 @@ export interface DetailsLanguages {
   key: string;
   title: string;
 }
+
+export interface SearchingLanguages {
+  code: string;
+  name: string;
+}
+
+export interface SearchingHistory {
+  code: string | undefined;
+  key: string | undefined;
+}

@@ -1,9 +1,9 @@
-import { DetailsLanguages } from "../../../environment/constans";
+import { SearchingLanguages } from "../../../environment/constans";
 import { StyledOption, StyledSelect } from "./Select.style";
 
 interface SelectProps {
   handleChangeSearchLanguage: React.ChangeEventHandler<HTMLSelectElement>;
-  values: DetailsLanguages[];
+  values: SearchingLanguages[];
 }
 
 export const Select: React.FC<SelectProps> = ({
@@ -13,7 +13,7 @@ export const Select: React.FC<SelectProps> = ({
   return (
     <StyledSelect onChange={handleChangeSearchLanguage}>
       {values.map((value) => (
-        <StyledOption key={value.code} value={[value.code, value.key]}>
+        <StyledOption key={value.code} value={value.code}>
           {value.name.toLowerCase()}
         </StyledOption>
       ))}

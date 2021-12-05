@@ -1,22 +1,16 @@
-import { DetailsLanguages } from "../environment/constans";
+import { SearchingLanguages } from "../environment/constans";
 
-export const searchingLanguages: DetailsLanguages[] = [
+export const searchingLanguages: SearchingLanguages[] = [
   {
     code: "en",
     name: "English",
-    key: "Earth",
-    title: "Earth",
   },
   {
     code: "pl",
     name: "polski",
-    key: "Ziemia",
-    title: "Ziemia",
   },
   {
     code: "es",
     name: "español",
-    key: "Tierra",
-    title: "Tierra",
   },
 ];

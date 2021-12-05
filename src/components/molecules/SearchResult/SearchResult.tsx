@@ -13,14 +13,16 @@ interface SearchResultProps {
 export const SearchResult: React.FC<SearchResultProps> = ({
   result,
   searchLanguage,
-}) => (
-  <StyledLink to={`/details/${searchLanguage}/${result.key}`}>
-    <StyledSearchResult>
-      {result.thumbnail != null && <Image src={result.thumbnail.url} />}
-      <div>
-        <Title child={result.title} />
-        <Description child={result.description} dark />
-      </div>
-    </StyledSearchResult>
-  </StyledLink>
-);
+}) => {
+  return (
+    <StyledLink to={`/details/${searchLanguage}/${result.key}`}>
+      <StyledSearchResult>
+        {result.thumbnail != null && <Image src={result.thumbnail.url} />}
+        <div>
+          <Title child={result.title} />
+          <Description child={result.description} dark />
+        </div>
+      </StyledSearchResult>
+    </StyledLink>
+  );
+};

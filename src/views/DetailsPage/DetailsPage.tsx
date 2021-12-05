@@ -1,50 +1,52 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { detailsFetch } from "../../data/fetching";
-import { DetailsLanguages } from "../../environment/constans";
+import { DetailsLanguages, SearchingHistory } from "../../environment/constans";
 
-import { StyledDetailsPage, StyledSelectWrapper } from "./DetailsPage.style";
-import { Select } from "../../components/atoms/Select/Select";
+import {
+  StyledDetailsPage,
+  StyledSelectWrapper,
+  StyledSelectsWrapper,
+} from "./DetailsPage.style";
+import { LanguageSwitcher } from "../../components/atoms/Select/LanguageSwitcher";
+import { SelectHistory } from "../../components/atoms/Select/SelectHistory";
 import { Description } from "../../components/atoms/Description/Description";
 
 export const DetailsPage: React.FC = () => {
   const [DetailsPage, setDetailsPage] = useState("");
   const { lang, name } = useParams();
-  const [detailsName, setDetailsName] = useState(name);
-  const [detailsLanguage, setDetailsLanguage] = useState(lang);
+
   const [availableLang, setAvailableLang] = useState<DetailsLanguages[]>([]);
+  const [history, setHistory] = useState<SearchingHistory[]>([]);
 
   useEffect(() => {
-    if (detailsName != undefined && detailsLanguage != undefined) {
-      detailsFetch(
-        setDetailsPage,
-        setAvailableLang,
-        detailsName,
-        detailsLanguage
-      );
+    if (name != undefined && lang != undefined) {
+      detailsFetch(setDetailsPage, setAvailableLang, name, lang);
     }
-  }, [detailsName, detailsLanguage]);
+  }, [name, lang]);
 
-  const handleChangeSearchLanguage = (
-    e: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const data = e.target.value.split(",");
-    setDetailsLanguage(data[0]);
-    setDetailsName(data[1]);
-  };
+  useEffect(() => {
+    setHistory([...history, { code: lang, key: name }]);
+    const histCheck = localStorage.getItem("searchHistory");
+    if (histCheck != null || histCheck != undefined) {
+      setHistory(JSON.parse(histCheck));
+    }
+    localStorage.setItem("searchHistory", JSON.stringify(history));
+  }, [DetailsPage, name, lang]);
 
   return (
     <>
-      <StyledSelectWrapper>
-        <Description child="Choose article language version" footer />
-        <Select
-          handleChangeSearchLanguage={handleChangeSearchLanguage}
-          values={availableLang}
-        />
-      </StyledSelectWrapper>
-      <StyledDetailsPage
-        dangerouslySetInnerHTML={{ __html: DetailsPage }}
-      ></StyledDetailsPage>
+      <StyledSelectsWrapper>
+        <StyledSelectWrapper>
+          <Description child="Switch article language version" footer />
+          <LanguageSwitcher values={availableLang} />
+        </StyledSelectWrapper>
+        <StyledSelectWrapper>
+          <Description child="See search history" footer />
+          <SelectHistory values={history} />
+        </StyledSelectWrapper>
+      </StyledSelectsWrapper>
+      <StyledDetailsPage srcDoc={DetailsPage}></StyledDetailsPage>
     </>
   );
 };

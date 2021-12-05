@@ -1,9 +1,10 @@
+import * as React from "react";
 import GlobalStyle from "../theme/GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import theme from "../theme/mainTheme";
 import { Routes, Route } from "react-router-dom";
 
-import { Logo } from "../components/atoms/Logo/Logo";
+import { Navigation } from "../components/molecules/Navigation/Navigation";
 import { MainSearchPage } from "./MainSearchPage/MainSearchPage";
 import { DetailsPage } from "./DetailsPage/DetailsPage";
 import { ErrorPage } from "./ErrorPage";
@@ -14,7 +15,7 @@ const Root: React.FC = () => {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Logo />
+        <Navigation />
         <Routes>
           <Route index element={<MainSearchPage />} />
           <Route path="details/:lang/:name" element={<DetailsPage />} />

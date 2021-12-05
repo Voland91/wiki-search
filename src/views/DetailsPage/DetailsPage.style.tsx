@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-export const StyledDetailsPage = styled.div`
-  padding: 200px 50px 50px 50px;
+export const StyledDetailsPage = styled.iframe`
+  width: 100%;
+  height: 57vh;
+  padding: 0 20px;
+  border: none;
   position: relative;
   z-index: 999;
-  font-size: ${({ theme }) => theme.fontSizes.s};
-  line-height: 22px;
 `;
 
 export const StyledSelectWrapper = styled.div`
@@ -13,6 +14,11 @@ export const StyledSelectWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  position: relative;
-  z-index: 999;
+  padding: 50px;
+  top: 0;
+`;
+
+export const StyledSelectsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

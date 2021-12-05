@@ -2,15 +2,17 @@ import {
   StyledLogoWrapper,
   StyledLogoType,
   StyledLogoSignet,
-  StyledLogoBackground,
 } from "./Logo.style";
+
+import { StyledLink } from "../../molecules/SearchResult/SearchResult.style";
 
 export const Logo: React.FC = () => (
   <>
-    <StyledLogoBackground />
     <StyledLogoWrapper>
-      <StyledLogoSignet />
-      <StyledLogoType>wikipedia</StyledLogoType>
+      <StyledLink to="/">
+        <StyledLogoSignet />
+        <StyledLogoType>wikipedia</StyledLogoType>
+      </StyledLink>
     </StyledLogoWrapper>
   </>
 );
