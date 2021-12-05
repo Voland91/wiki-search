@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const StyledNavigation = styled.nav`
-  position: relative;
+export const StyledHistorySelect = styled.div`
+  position: absolute;
+  right: 50px;
+  top: 50px;
   z-index: 999;
 `;

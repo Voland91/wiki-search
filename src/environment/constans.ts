@@ -30,6 +30,6 @@ export interface SearchingLanguages {
 }
 
 export interface SearchingHistory {
-  code: string | undefined;
-  key: string | undefined;
+  lang: string;
+  name: string;
 }

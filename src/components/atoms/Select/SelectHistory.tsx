@@ -12,16 +12,20 @@ export const SelectHistory: React.FC<SelectProps> = ({ values }) => {
   const handleChangeSearchLanguage = (
     e: React.ChangeEvent<HTMLSelectElement>
   ) => {
-    navigate(e.target.value);
+    const data = e.target.value.split(",");
+    navigate(`/details/${data[0]}/${data[1]}`);
   };
 
   return (
     <StyledSelect onChange={handleChangeSearchLanguage}>
-      {/* {values.map((value) => (
-        <StyledOption key={value} value={value}>
-          {value}
+      {values.map((value) => (
+        <StyledOption
+          key={(value.lang, value.name)}
+          value={[value.lang, value.name]}
+        >
+          {`${value.name}`}
         </StyledOption>
-      ))} */}
+      ))}
     </StyledSelect>
   );
 };
