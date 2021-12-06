@@ -18,6 +18,9 @@ export const LanguageSwitcher: React.FC<SelectProps> = ({ values }) => {
 
   return (
     <StyledSelect onChange={handleChangeSearchLanguage}>
+      <StyledOption disabled selected value="">
+        languages...
+      </StyledOption>
       {values.map((value) => (
         <StyledOption key={value.code} value={[value.code, value.key]}>
           {value.name.toLowerCase()}

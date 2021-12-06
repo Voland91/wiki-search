@@ -18,6 +18,9 @@ export const SelectHistory: React.FC<SelectProps> = ({ values }) => {
 
   return (
     <StyledSelect onChange={handleChangeSearchLanguage}>
+      <StyledOption disabled selected value="">
+        history...
+      </StyledOption>
       {values.map((value) => (
         <StyledOption
           key={(value.lang, value.name)}

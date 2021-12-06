@@ -13,14 +13,6 @@ const doFetch = (customUrl: string) => {
     .catch((err) => err.message);
 };
 
-const doFetchString = (customUrl: string) => {
-  return fetch(customUrl)
-    .then((res) => {
-      return res.text();
-    })
-    .catch((err) => err.message);
-};
-
 export const searchFetch = (
   state: (value: React.SetStateAction<SearchingResult[]>) => void,
   search: string,
@@ -34,14 +26,10 @@ export const searchFetch = (
 };
 
 export const detailsFetch = (
-  state: (value: React.SetStateAction<string>) => void,
   languages: (value: React.SetStateAction<DetailsLanguages[]>) => void,
   name: string,
   lang: string
 ): void => {
-  doFetchString(`https://${lang}.${detailsUrl}/${name}/html`).then((data) => {
-    state(data);
-  });
   doFetch(`https://${lang}.${detailsUrl}/${name}/links/language`).then(
     (data) => {
       languages(data);

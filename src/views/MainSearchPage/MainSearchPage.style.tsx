@@ -11,7 +11,7 @@ export const StyledWrapper = styled.div`
 export const StyledSearchBarWrapper = styled.div`
   width: 100%;
   max-width: 800px;
-  height: 35vh;
+  height: 30vh;
   display: flex;
   margin: 0 auto;
   flex-direction: column;

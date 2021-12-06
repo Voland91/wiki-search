@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Loader from "react-loader-spinner";
 
 export const StyledDetailsPage = styled.iframe`
   width: 100%;
@@ -21,4 +22,10 @@ export const StyledSelectWrapper = styled.div`
 export const StyledSelectsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+export const StyledLoader = styled(Loader)`
+  margin: 0 auto;
+  width: 0;
+  padding-top: 150px;
 `;

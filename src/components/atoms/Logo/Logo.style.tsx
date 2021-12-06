@@ -5,6 +5,8 @@ export const StyledLogoWrapper = styled.div`
   padding: 50px;
   position: relative;
   z-index: 999;
+  max-width: 120px;
+  margin: 0 auto;
 `;
 
 export const StyledLogoType = styled.p`
