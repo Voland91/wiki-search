@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 export const StyledWrapper = styled.div`
-  height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 999;
+  max-width: 800px;
+  margin: 0 auto;
 `;
 
 export const StyledSearchBarWrapper = styled.div`
   width: 100%;
-  max-width: 800px;
   height: 30vh;
   display: flex;
   margin: 0 auto;
@@ -22,7 +22,6 @@ export const StyledSearchBarWrapper = styled.div`
 
 export const StyledSeacrResultWrapper = styled.div`
   width: 100%;
-  max-width: 800px;
   margin: 0 auto;
   padding: 20px 20px 0 20px;
   margin-bottom: 50px;

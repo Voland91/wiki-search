@@ -18,6 +18,7 @@ const mainTheme: DefaultTheme = {
     s: "12px",
     m: "20px",
     L: "35px",
+    xl: "60px",
   },
 };
 

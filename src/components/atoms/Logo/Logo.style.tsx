@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const StyledLogoWrapper = styled.div`
-  text-align: center;
-  padding: 50px;
+  padding: 50px 0;
   position: relative;
   z-index: 999;
   max-width: 120px;

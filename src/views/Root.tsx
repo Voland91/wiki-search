@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import { Navigation } from "../components/molecules/Navigation/Navigation";
 import { MainSearchPage } from "./MainSearchPage/MainSearchPage";
 import { DetailsPage } from "./DetailsPage/DetailsPage";
-import { ErrorPage } from "./ErrorPage";
+import { ErrorPage } from "./404/ErrorPage";
 import { Footer } from "../components/molecules/Footer/Footer";
 
 const Root: React.FC = () => (

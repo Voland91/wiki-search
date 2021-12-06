@@ -24,8 +24,13 @@ export const DetailsPage: React.FC = () => {
     if (name != undefined && lang != undefined) {
       detailsFetch(setAvailableLang, name, lang);
       setDetailsPage(`https://${lang}.${detailsUrl}/${name}/html`);
+      setIsLoading(true);
     }
   }, [name, lang]);
+
+  useEffect(() => {
+    setIsLoading(true);
+  }, [DetailsPage]);
 
   const handlehideSpinner = () => setIsLoading(false);
 
