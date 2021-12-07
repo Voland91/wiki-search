@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const StyledWrapper = styled.main`
   max-width: 800px;
   width: 100%;
-  min-height: 550px;
-  margin: 10px auto;
+  min-height: 570px;
+  margin: 0 auto;
   padding-top: 200px;
 `;
 

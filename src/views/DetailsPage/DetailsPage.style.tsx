@@ -7,10 +7,9 @@ export const StyledDetailsPageWrapper = styled.article`
 `;
 
 export const StyledDetailsPage = styled.iframe`
-  max-width: 100vw;
   padding-left: 10px;
   border: none;
-  min-height: 580px;
+  min-height: 550px;
 `;
 
 export const StyledSelectWrapper = styled.div`
@@ -20,6 +19,7 @@ export const StyledSelectWrapper = styled.div`
   align-items: flex-start;
   padding: 20px;
   max-height: 40px;
+  margin-bottom: 20px;
 `;
 
 export const StyledLoader = styled(Loader)`

@@ -4,7 +4,8 @@ import bgphoto from "../../assets/404bg.png";
 export const StyledWrapper = styled.div`
   margin: 0 auto;
   text-align: center;
-  padding: 150px 20px 0 20px;
+  padding: 0 20px;
+  min-height: 300px;
 
   &::after {
     content: "";
