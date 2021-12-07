@@ -10,6 +10,7 @@ import {
   StyledDetailsPage,
   StyledSelectWrapper,
   StyledLoader,
+  StyledDetailsPageWrapper,
 } from "./DetailsPage.style";
 import { LanguageSwitcher } from "../../components/atoms/Select/LanguageSwitcher";
 import { Description } from "../../components/atoms/Description/Description";
@@ -35,8 +36,8 @@ export const DetailsPage: React.FC = () => {
   const handlehideSpinner = () => setIsLoading(false);
 
   return (
-    <>
-      {isLoading && <StyledLoader type="Rings" color="#dadada" height={120} />}
+    <StyledDetailsPageWrapper>
+      {isLoading && <StyledLoader type="Rings" color="#dadada" />}
       {!isLoading && (
         <StyledSelectWrapper>
           <Description child="Switch article language version" footer />
@@ -47,6 +48,6 @@ export const DetailsPage: React.FC = () => {
         src={DetailsPage}
         onLoad={handlehideSpinner}
       ></StyledDetailsPage>
-    </>
+    </StyledDetailsPageWrapper>
   );
 };

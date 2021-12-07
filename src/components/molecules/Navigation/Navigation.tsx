@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { SearchingHistory } from "../../../environment/constans";
-import { StyledHistorySelect } from "./Navigation.style";
+import { StyledNavigation, StyledSelectsWrapper } from "./Navigation.style";
 import { Description } from "../../atoms/Description/Description";
 import { SelectHistory } from "../../atoms/Select/SelectHistory";
 import { Logo } from "../../atoms/Logo/Logo";
@@ -18,14 +18,16 @@ export const Navigation: React.FC = () => {
   }, [navigate]);
 
   return (
-    <>
+    <StyledNavigation>
       <Logo />
-      {history.length > 0 && (
-        <StyledHistorySelect>
-          <Description child="See your search history" footer />
-          <SelectHistory values={history} />
-        </StyledHistorySelect>
-      )}
-    </>
+      <StyledSelectsWrapper>
+        {history.length > 0 && (
+          <>
+            <Description child="See your search history" footer />
+            <SelectHistory values={history} />
+          </>
+        )}
+      </StyledSelectsWrapper>
+    </StyledNavigation>
   );
 };

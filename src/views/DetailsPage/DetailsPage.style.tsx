@@ -1,13 +1,16 @@
 import styled from "styled-components";
 import Loader from "react-loader-spinner";
 
+export const StyledDetailsPageWrapper = styled.article`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const StyledDetailsPage = styled.iframe`
-  width: 100%;
-  height: 57vh;
-  padding: 0 20px;
+  max-width: 100vw;
+  padding-left: 10px;
   border: none;
-  position: relative;
-  z-index: 999;
+  min-height: 580px;
 `;
 
 export const StyledSelectWrapper = styled.div`
@@ -15,13 +18,8 @@ export const StyledSelectWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 50px;
-  top: 0;
-`;
-
-export const StyledSelectsWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+  padding: 20px;
+  max-height: 40px;
 `;
 
 export const StyledLoader = styled(Loader)`

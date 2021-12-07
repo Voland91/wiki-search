@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const StyledLogoWrapper = styled.div`
-  padding: 50px 0;
+  padding: 50px 0 20px 0;
   position: relative;
   z-index: 999;
   max-width: 120px;
   margin: 0 auto;
+  text-align: center;
 `;
 
 export const StyledLogoType = styled.p`
