@@ -23,7 +23,7 @@ export const SelectHistory: React.FC<SelectProps> = ({ values }) => {
       </StyledOption>
       {values.map((value) => (
         <StyledOption
-          key={(value.lang, value.name)}
+          key={`${value.lang + value.name + values.indexOf(value)}`}
           value={[value.lang, value.name]}
         >
           {`${value.name}`}
