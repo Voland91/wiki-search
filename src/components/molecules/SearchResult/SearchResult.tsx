@@ -1,4 +1,4 @@
-import { SearchingResult } from "../../../environment/constans";
+import { SearchingResult } from "../../../environment/interfaces";
 import { StyledSearchResult, StyledLink } from "./SearchResult.style";
 import { Image } from "../../atoms/Image/Image";
 import { Title } from "../../atoms/Title/Title";

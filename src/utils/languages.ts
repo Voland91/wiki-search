@@ -1,4 +1,4 @@
-import { SearchingLanguages } from "../environment/constans";
+import { SearchingLanguages } from "../environment/interfaces";
 
 export const searchingLanguages: SearchingLanguages[] = [
   {
