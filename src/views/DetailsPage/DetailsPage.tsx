@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { detailsFetch } from "../../data/fetching";
-import {
-  API_DETAILS_URL as detailsUrl,
-  DetailsLanguages,
-} from "../../environment/constans";
+import { DetailsLanguages } from "../../environment/interfaces";
+import { API_DETAILS_URL as detailsUrl } from "../../environment/constans";
 
 import {
   StyledDetailsPage,

@@ -1,9 +1,9 @@
 import {
   API_SEARCH_URL as searchUrl,
   API_DETAILS_URL as detailsUrl,
-  SearchingResult,
-  DetailsLanguages,
 } from "../environment/constans";
+
+import { SearchingResult, DetailsLanguages } from "../environment/interfaces";
 
 const doFetch = (customUrl: string) => {
   return fetch(customUrl)

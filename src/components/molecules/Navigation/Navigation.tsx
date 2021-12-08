@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { SearchingHistory } from "../../../environment/constans";
+import { SearchingHistory } from "../../../environment/interfaces";
 import { StyledNavigation, StyledSelectsWrapper } from "./Navigation.style";
 import { Description } from "../../atoms/Description/Description";
 import { SelectHistory } from "../../atoms/Select/SelectHistory";

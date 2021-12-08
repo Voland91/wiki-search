@@ -1,4 +1,4 @@
-import { SearchingLanguages } from "../../../environment/constans";
+import { SearchingLanguages } from "../../../environment/interfaces";
 import { searchingLanguages } from "../../../utils/languages";
 import { Input } from "../../atoms/Input/Input";
 import { Select } from "../../atoms/Select/Select";

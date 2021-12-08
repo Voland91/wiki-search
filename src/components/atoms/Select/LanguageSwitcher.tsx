@@ -1,4 +1,4 @@
-import { DetailsLanguages } from "../../../environment/constans";
+import { DetailsLanguages } from "../../../environment/interfaces";
 import { useNavigate } from "react-router-dom";
 import { StyledOption, StyledSelect } from "./Select.style";
 

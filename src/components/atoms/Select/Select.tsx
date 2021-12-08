@@ -1,4 +1,4 @@
-import { SearchingLanguages } from "../../../environment/constans";
+import { SearchingLanguages } from "../../../environment/interfaces";
 import { StyledOption, StyledSelect } from "./Select.style";
 
 interface SelectProps {

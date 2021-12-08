@@ -10,14 +10,12 @@ export const StyledWrapper = styled.div`
   &::after {
     content: "";
     background-image: url(${bgphoto});
-    opacity: 0.2;
+    opacity: 0.1;
     background-repeat: no-repeat;
     background-size: 100%;
     width: 90vh;
     height: 700px;
-    /* left: 0; */
     bottom: 0;
-    /* right: 0; */
     position: absolute;
     z-index: 0;
   }

@@ -1,4 +1,4 @@
-import { SearchingHistory } from "../../../environment/constans";
+import { SearchingHistory } from "../../../environment/interfaces";
 import { useNavigate } from "react-router-dom";
 import { StyledOption, StyledSelect } from "./Select.style";
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { searchFetch } from "../../data/fetching";
-import { SearchingResult } from "../../environment/constans";
+import { SearchingResult } from "../../environment/interfaces";
 import { searchingLanguages } from "../../utils/languages";
 
 import { SearchResult } from "../../components/molecules/SearchResult/SearchResult";
