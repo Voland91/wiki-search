@@ -18,7 +18,14 @@ declare module "styled-components" {
     fontSizes: {
       s: string;
       m: string;
-      L: string;
+      l: string;
+      xl: string;
+    };
+
+    mobileFontSizes: {
+      s: string;
+      m: string;
+      l: string;
       xl: string;
     };
   }

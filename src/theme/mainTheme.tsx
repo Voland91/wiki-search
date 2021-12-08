@@ -17,8 +17,15 @@ const mainTheme: DefaultTheme = {
   fontSizes: {
     s: "12px",
     m: "20px",
-    L: "35px",
+    l: "35px",
     xl: "60px",
+  },
+
+  mobileFontSizes: {
+    s: "10px",
+    m: "14px",
+    l: "28px",
+    xl: "40px",
   },
 };
 

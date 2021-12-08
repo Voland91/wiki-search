@@ -10,6 +10,10 @@ export const StyledDescription = styled.p<StyledDescriptionProps>`
   color: ${({ theme }) => theme.colors.gray};
   font-size: ${({ theme }) => theme.fontSizes.m};
 
+  @media (max-width: 767px) {
+    font-size: ${({ theme }) => theme.mobileFontSizes.m};
+  }
+
   ${({ dark }) =>
     dark &&
     css`
@@ -21,6 +25,10 @@ export const StyledDescription = styled.p<StyledDescriptionProps>`
     footer &&
     css`
       color: ${({ theme }) => theme.colors.black};
-      font-size: ${({ theme }) => theme.fontSizes?.s};
+      font-size: ${({ theme }) => theme.fontSizes.s};
+
+      @media (max-width: 767px) {
+        font-size: ${({ theme }) => theme.mobileFontSizes.s};
+      }
     `}
 `;

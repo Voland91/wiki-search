@@ -3,9 +3,7 @@ import styled from "styled-components";
 export const StyledWrapper = styled.main`
   max-width: 800px;
   width: 100%;
-  min-height: 570px;
   margin: 0 auto;
-  padding-top: 200px;
 `;
 
 export const StyledSearchBarWrapper = styled.div`
@@ -26,9 +24,7 @@ export const StyledLogoBackground = styled.div`
   left: 40%;
   top: -30%;
   width: calc(100vw / 1.75);
-  min-width: 700px;
   height: calc(100vw / 1.75);
-  min-height: 700px;
   border-radius: 50%;
   background: linear-gradient(
     135deg,
@@ -37,4 +33,8 @@ export const StyledLogoBackground = styled.div`
     rgba(222, 222, 222, 0.5) 100%
   );
   z-index: -1;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;

@@ -12,6 +12,10 @@ export const StyledSelect = styled.select`
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   margin-bottom: 20px;
+
+  @media (max-width: 767px) {
+    font-size: ${({ theme }) => theme.mobileFontSizes.s};
+  }
 `;
 
 export const StyledOption = styled.option`

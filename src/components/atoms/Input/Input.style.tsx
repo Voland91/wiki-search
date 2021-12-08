@@ -7,7 +7,7 @@ export const StyledInput = styled(DebounceInput)`
   border: none;
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   color: ${({ theme }) => theme.colors.black};
-  font-size: ${({ theme }) => theme.fontSizes?.L};
+  font-size: ${({ theme }) => theme.fontSizes.l};
   outline: none;
   caret-color: ${({ theme }) => theme.colors.black};
   background-color: transparent;
@@ -19,5 +19,10 @@ export const StyledInput = styled(DebounceInput)`
   &:active,
   :focus {
     border-bottom: 2px solid transparent;
+  }
+
+  @media (max-width: 767px) {
+    font-size: ${({ theme }) => theme.mobileFontSizes.l};
+    height: 30px;
   }
 `;

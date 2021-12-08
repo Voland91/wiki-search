@@ -5,7 +5,6 @@ export const StyledWrapper = styled.div`
   margin: 0 auto;
   text-align: center;
   padding: 0 20px;
-  min-height: 300px;
 
   &::after {
     content: "";
@@ -18,5 +17,9 @@ export const StyledWrapper = styled.div`
     bottom: 0;
     position: absolute;
     z-index: 0;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 `;
